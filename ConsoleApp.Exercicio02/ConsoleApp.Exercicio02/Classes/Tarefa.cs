@@ -22,7 +22,8 @@ namespace ConsoleApp.Exercicio02.Classes
         }
 
         public abstract void ConcluirTarefa( DateTime prazoConclusao);
-
+               
+        
         public abstract string DescreverTarefa( string nomeTarefa);
 
     }
