@@ -10,41 +10,15 @@ namespace ConsoleApp.Exercicio02.Classes
         
         public DateTime DataPrazo { get; set; }
         
-        public TarefaComPrazo(string descricao, bool concluida, DateTime prazo) : base(descricao, concluida)
+        public TarefaComPrazo(string descricao, DateTime prazo) : base(descricao)
         {
             this.DataPrazo = prazo;
         }
 
-        public override string DescreverTarefa(string nomeTarefa)
+        public override string Descrever()
         {
-            Console.WriteLine("Bem vindo ao seu descritor de tarefas!");
-            Console.WriteLine("Pressione qualquer tecla para começar:");
-            nomeTarefa = Console.ReadLine()!;
-            return nomeTarefa;
-                                           
+             return $"Tarefa tarefa com prazo: {Descricao} Prazo: {DataPrazo} ";                           
         }
-         
-
-        public override void ConcluirTarefa( DateTime prazoConclusao)
-        {   
-            prazoConclusao = prazoConclusao.AddDays(2);
-            if (this.concluida = false )
-            {
-                Console.WriteLine($"Tarefa {descricao} não concluída.");
-            }
-            else if (this.concluida = true && DataPrazo < prazoConclusao )
-            {
-                Console.WriteLine($"Tarefa {descricao} concluída, atingindo supermeta.");
-            }
-            else if (this.concluida = true && DataPrazo == prazoConclusao )
-            {
-                Console.WriteLine($"Tarefa {descricao} concluída, dentro do prazo estimado.");
-            }
-            else if (this.concluida = true && DataPrazo > prazoConclusao )
-            {
-                Console.WriteLine($"Tarefa {descricao} concluída, não atendeu ao prazo estimado.");
-            }
-                        
-        }
+        
     }
 }

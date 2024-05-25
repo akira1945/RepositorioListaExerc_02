@@ -16,6 +16,7 @@ namespace ConsoleApp.Exercicio02.Classes
 
         public void AdicionarTarefa(Categoria categoria, Tarefa tarefa)
         {
+
             if(!tarefaLista.ContainsKey(categoria))
             {
                 tarefaLista[categoria] = new List<Tarefa>();
@@ -27,9 +28,9 @@ namespace ConsoleApp.Exercicio02.Classes
 
         public void RemoverTarefa(Categoria categoria, Tarefa tarefa)
         {
-            if (tarefa.concluida = false )
+            if (!tarefa.Concluida)
             {
-                Console.WriteLine($"Tarefa {tarefa.descricao}, não pode ser removida, ainda não foi concluída.");
+                Console.WriteLine($"Tarefa {tarefa.Descricao}, não pode ser removida, ainda não foi concluída.");
             }
             else 
             {
@@ -39,29 +40,28 @@ namespace ConsoleApp.Exercicio02.Classes
                 }
             }
         } 
-        public void ListarTarefas(Categoria categoria, Tarefa tarefa)
+        public void ListarTarefas(Categoria categoria)
         {
             if(!tarefaLista.ContainsKey(categoria))
             {
-                foreach (var itemLista in tarefaLista)
+                foreach (var item in tarefaLista[categoria])
                 {
-                    Console.WriteLine($"Categoria {categoria}, tarefa listada: {itemLista.Key}");
+                    Console.WriteLine($"Categoria {categoria}, {item.Descrever()}");
                 }
+            }else{
+                Console.WriteLine($"Categoria {categoria}, não existe.");
             }
             
         }
 
-        public void GerarRelatorio(Categoria categoria, Tarefa tarefa)
+        public void GerarRelatorio()
         {
-            if(!tarefaLista.ContainsKey(categoria) == false)
+            foreach (var categoria in tarefaLista.Keys)
             {
-                Console.WriteLine("Sem tarefas para exibir");
-            }
-            else
-            {
-                foreach (var itemLista in tarefaLista)
+                Console.WriteLine($"Categoria: {categoria.Nome}");
+                foreach (var tarefa in tarefaLista[categoria])
                 {
-                    Console.WriteLine($"{itemLista.Key}");
+                    Console.WriteLine($"{tarefa.Descrever()}");
                 }
             }
 

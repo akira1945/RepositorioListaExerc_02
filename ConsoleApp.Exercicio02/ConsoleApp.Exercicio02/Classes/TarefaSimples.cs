@@ -7,33 +7,15 @@ namespace ConsoleApp.Exercicio02.Classes
 {
     public class TarefaSimples : Tarefa
     {
-        public TarefaSimples(string descricao, bool concluida) : base(descricao, concluida)
+        public TarefaSimples(string descricao) : base(descricao)
         {
             
         }
 
-        public override string DescreverTarefa(string nomeTarefa)
+        public override string Descrever()
         {
-            Console.WriteLine("Bem vindo ao seu descritor de tarefas!");
-            Console.WriteLine("Pressione qualquer tecla para começar:");
-            nomeTarefa = Console.ReadLine()!;
-            return nomeTarefa;
-                        
+            return $"Tarefa simples: {Descricao}";               
         }
 
-        public override void ConcluirTarefa(DateTime prazoConclusao)
-        {   
-            if (this.concluida = false)
-            {
-                Console.WriteLine($"Tarefa {descricao} não concluída.");
-            }
-            else
-            {
-                Console.WriteLine($"Tarefa {descricao} finalizada.");
-            }
-            
-        }
-
-       
     }
 }

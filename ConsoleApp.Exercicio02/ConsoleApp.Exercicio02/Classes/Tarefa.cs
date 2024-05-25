@@ -7,24 +7,30 @@ namespace ConsoleApp.Exercicio02.Classes
 {
     public abstract class Tarefa
     {
-        private string Descricao;
+        /*private string Descricao;
 
         private bool Concluida;
 
         public string descricao { get{ return Descricao; }  set{ Descricao = value;} }
 
-        public bool concluida { get{ return Concluida; } set{Concluida = value;} }
+        public bool concluida { get{ return Concluida; } set{Concluida = value;} }*/
 
-        public Tarefa(string descricao, bool concluida) 
+        public string Descricao { get; set; }
+        public bool Concluida { get; set; }
+
+        public Tarefa(string descricao) 
         {
-            this.descricao = descricao;
-            this.concluida = concluida;
+            this.Descricao = descricao;
+            this.Concluida = false;
         }
 
-        public abstract void ConcluirTarefa( DateTime prazoConclusao);
-               
+       // public abstract void Concluir();
+        public void Concluir()
+        {   
+            Concluida = true;
+        }      
         
-        public abstract string DescreverTarefa( string nomeTarefa);
+        public abstract string Descrever();
 
     }
 }
