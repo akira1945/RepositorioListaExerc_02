@@ -34,7 +34,7 @@ namespace ConsoleApp.Exercicio02.Classes
             }
             else if (this.concluida = true && DataPrazo < prazoConclusao )
             {
-                Console.WriteLine($"Tarefa {descricao} concluída, com atrasos.");
+                Console.WriteLine($"Tarefa {descricao} concluída, atingindo supermeta.");
             }
             else if (this.concluida = true && DataPrazo == prazoConclusao )
             {
